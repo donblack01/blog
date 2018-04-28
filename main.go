@@ -14,6 +14,5 @@ func main() {
 	blog.Delims("{{", "}}")
 	blog.LoadHTMLGlob(filepath.Join(os.Getenv("GOPATH"), "src/blog/views/*"))
 	blog.GET("/", controllers.Index)
-	blog.GET("/index.html", controllers.Index)
 	blog.Run(":8080")
 }
