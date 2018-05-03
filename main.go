@@ -2,9 +2,10 @@ package main
 
 import (
 	"blog/controllers"
-	"github.com/gin-gonic/gin"
 	"os"
 	"path/filepath"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
