@@ -6,5 +6,8 @@
 </head>
 <body>
 {{.name}}
+{{range .dat}}
+<p>{{.User_id}}&nbsp;&nbsp;&nbsp;&nbsp;{{.Umeta_id}}&nbsp;&nbsp;&nbsp;&nbsp;{{.Meta_key}}&nbsp;&nbsp;&nbsp;&nbsp;{{.Meta_value}}</p>
+{{end}}
 </body>
 </html>
