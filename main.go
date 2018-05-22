@@ -4,6 +4,8 @@ import (
 	"blog/controllers"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"os"
+	"path/filepath"
 )
 
 func main() {
@@ -11,8 +13,8 @@ func main() {
 	blog.Use(gin.Logger())
 	gin.SetMode(gin.DebugMode)
 	blog.Delims("{{", "}}")
-	blog.LoadHTMLGlob("./views/*")
-	blog.Static("/static", "./static/")
+	blog.LoadHTMLGlob(filepath.Join(os.Getenv("GOPATH"), "src/blog/views/*"))
+	blog.Static("/static", "src/blog/static/")
 	blog.NoRoute(func(this *gin.Context) {
 		this.HTML(http.StatusNotFound, "404.html", gin.H{})
 	})
